@@ -1,0 +1,156 @@
+body {
+  max-width: 1320px;
+  background-color: #f5f5f5;
+  font-size: 15px;
+  line-height: 1.6em;
+  position: relative;
+}
+.header {
+  margin-left: 10%;
+  width: 80%;
+  height: 100px;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  &__content {
+    max-width: 1032px;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+  &__bar {
+    display: flex;
+    margin: auto;
+    letter-spacing: 1px;
+    list-style: none;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    & :nth-child(1) {
+      position: relative;
+      left: -40%;
+    }
+  }
+  &__item {
+    margin-top: 38px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+.imgContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: solid 1px black;
+  background-repeat: no-repeat;
+  background-image: url(/assets/img/favicon.ico);
+  left: 5%;
+  z-index: 5;
+}
+@mixin eachitem {
+  width: 80%;
+  margin-left: 10%;
+}
+@mixin eachwrapper {
+  margin: 0;
+  width: 100%;
+
+  box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+@mixin eachsubpage {
+  background-color: rgba($color: #2eca7f, $alpha: 1);
+}
+@mixin eachcontent {
+  padding-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 25px;
+}
+.home {
+  @include eachitem();
+  &__wrapper {
+    @include eachwrapper();
+  }
+  &__subpage {
+    @include eachsubpage();
+    padding-top: 100px;
+    &--info {
+      position: relative;
+      right: 0;
+      text-align: center;
+      margin: auto;
+      p {
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+  &__content {
+    @include eachcontent();
+    &--list {
+      list-style: none;
+      margin-top: 20px;
+      li {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+.title {
+  display: inline-block;
+  font-size: 20px;
+  min-width: 120px;
+}
+.value {
+  color: black;
+}
+
+.resume {
+  @include eachitem();
+  &__wrapper {
+    @include eachwrapper();
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &__subpage {
+    @include eachsubpage();
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h2 {
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
+  }
+  &__content {
+    @include eachcontent();
+    h4 {
+      text-align: center;
+    }
+  }
+}
+.contact {
+  @include eachitem();
+  &__wrapper {
+    @include eachwrapper();
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &__subpage {
+    @include eachsubpage();
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h2 {
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
+  }
+  &__content {
+    @include eachcontent();
+    h4 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin-top: 5px;
+      }
+    }
+  }
+}
